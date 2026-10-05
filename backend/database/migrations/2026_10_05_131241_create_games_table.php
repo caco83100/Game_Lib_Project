@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('igdb_id')->nullable()->unique();
+            $table->unsignedInteger('igdb_id')->nullable();
             $table->string('title');
             $table->string('platform');
             $table->string('format')->nullable();
@@ -22,8 +22,11 @@ return new class extends Migration
             $table->date('release_date')->nullable();
             $table->string('cover_url')->nullable();
             $table->text('summary')->nullable();
-            $table->string('source')->default('igdb');
+            $table->string('source')->default('manual');
             $table->timestamps();
+
+            // The same IGDB game can be released on several platforms
+            $table->unique(['igdb_id', 'platform']);
         });
     }
 
