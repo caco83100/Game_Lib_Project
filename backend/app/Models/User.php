@@ -6,12 +6,13 @@ namespace App\Models;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password'])]
-#[Hidden(['password', 'remember_token'])]
+#[Fillable(['pseudo', 'email', 'password'])]
+#[Hidden(['password'])]
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
@@ -25,8 +26,15 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function libraries(): HasMany {
+        return $this->hasMany(Library::class);
+    }
+
+    public function  borrowedGames(): HasMany {
+        return $this->hasMany(BorrowedGame::class, 'borrower_id');
     }
 }
