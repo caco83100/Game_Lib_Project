@@ -107,3 +107,33 @@ it('allows active borrows of two different copies', function () {
 
     expect(DB::table('borrowed_games')->whereNull('returned_date')->count())->toBe(2);
 });
+it('allows a borrow by a friend without account', function () {
+    DB::table('borrowed_games')->insert([
+        'owned_game_id' => createOwnedGame(),
+        'borrower_name' => 'Paul',
+        'borrowed_date' => '2026-10-01',
+    ]);
+
+    expect(DB::table('borrowed_games')->whereNull('borrower_id')->count())->toBe(1);
+});
+
+it('rejects a borrow with neither a borrower nor a borrower name', function () {
+    $copyId = createOwnedGame();
+
+    expect(fn () => DB::table('borrowed_games')->insert([
+        'owned_game_id' => $copyId,
+        'borrowed_date' => '2026-10-01',
+    ]))->toThrow(QueryException::class);
+});
+
+it('rejects a return date before the borrow date', function () {
+    $copyId = createOwnedGame();
+    $borrowerId = createUser();
+
+    expect(fn () => DB::table('borrowed_games')->insert([
+        'owned_game_id' => $copyId,
+        'borrower_id'   => $borrowerId,
+        'borrowed_date' => '2026-10-10',
+        'returned_date' => '2026-10-01',
+    ]))->toThrow(QueryException::class);
+});
