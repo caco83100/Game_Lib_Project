@@ -1,0 +1,590 @@
+{
+    "tables": [
+        {
+            "id": "h3Z8D0qmsgGHz5A0_cOYD",
+            "name": "borrowed_games",
+            "x": -718.6,
+            "y": -587.9,
+            "locked": false,
+            "fields": [
+                {
+                    "id": "GxAaKnvoRDhY7h7BwnYiy",
+                    "name": "id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": true,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": true,
+                    "comment": ""
+                },
+                {
+                    "id": "BeIlXa6BnMjxBPWok0mqR",
+                    "name": "borrower_id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "aPUZMCpCe6Nq4WB6TnZZH",
+                    "name": "borrower_name",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "5mvv88k2Ks1ZRp11hXMMl",
+                    "name": "owned_game_id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": true,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "iuVeijwAoXW0q46QHlXpD",
+                    "name": "borrowed_date",
+                    "type": "DATE",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "ABUbfAy01MBvagkmQ2lDA",
+                    "name": "due_date",
+                    "type": "DATE",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "6dKemgjSlbKV1Np7dD4P5",
+                    "name": "returned_date",
+                    "type": "DATE",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": ""
+                }
+            ],
+            "comment": "",
+            "indices": [],
+            "uniqueConstraints": [],
+            "color": "#7a7717",
+            "collapsed": false,
+            "width": 296
+        },
+        {
+            "id": "tZtuELd0B9Y8ayeULDLOO",
+            "name": "games",
+            "x": -45.9,
+            "y": -135.7,
+            "locked": false,
+            "fields": [
+                {
+                    "id": "RyGWvML2FyU0iVNzcQOmW",
+                    "name": "id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": true,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": true,
+                    "comment": ""
+                },
+                {
+                    "id": "qLAHvhDD8I1APDXUiTYTb",
+                    "name": "igdb_id",
+                    "type": "INTEGER",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "XDN4dHJ1e1BznlqU5FsFA",
+                    "name": "title",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "VilL1qdpz5fPopDBxQvKz",
+                    "name": "platform",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "CUcTMCOUtIEuoh7bwBSuC",
+                    "name": "format",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "PIPjzcwkihcfKoB0qnECu",
+                    "name": "genre",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "HFCO3hdN5xpBmcdDTOyNj",
+                    "name": "publisher",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "ng2zs2KEc9ehFcTAmiwlC",
+                    "name": "release_date",
+                    "type": "DATE",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "S68IPGtwN2EIARa8SWJJZ",
+                    "name": "cover_url",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "wKVC2gHTALGNGo4gjLSOY",
+                    "name": "summary",
+                    "type": "TEXT",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "GI1oT75PyLdlk5juN8XSC",
+                    "name": "source",
+                    "type": "VARCHAR",
+                    "default": "'manual'::character varying",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                }
+            ],
+            "comment": "",
+            "indices": [
+                {
+                    "id": "WJEnM4dNRhz5A6CWATpzG",
+                    "name": "games_igdb_id_platform_unique",
+                    "unique": true,
+                    "fields": [
+                        "igdb_id",
+                        "platform"
+                    ]
+                }
+            ],
+            "uniqueConstraints": [],
+            "color": "#7a3517",
+            "collapsed": false,
+            "width": 223
+        },
+        {
+            "id": "95tiWCpo_jFjillyAF8X1",
+            "name": "libraries",
+            "x": 66.1,
+            "y": 369.7,
+            "locked": false,
+            "fields": [
+                {
+                    "id": "gV9pcBD8OnYzXzZmTuYqk",
+                    "name": "id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": true,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": true,
+                    "comment": ""
+                },
+                {
+                    "id": "5JaKjMoqvXtAsHiHpHhjv",
+                    "name": "user_id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "hh6Bcsf4MvImUwQAN0iX6",
+                    "name": "title",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "LJKPY0808cPbfFGnE5G0e",
+                    "name": "is_default",
+                    "type": "BOOLEAN",
+                    "default": "false",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": ""
+                }
+            ],
+            "comment": "",
+            "indices": [
+                {
+                    "id": "E9HcA5cg0mh2RjKX4kRPy",
+                    "name": "libraries_user_id_title_unique",
+                    "unique": true,
+                    "fields": [
+                        "user_id",
+                        "title"
+                    ]
+                }
+            ],
+            "uniqueConstraints": [],
+            "color": "#307a17",
+            "collapsed": false
+        },
+        {
+            "id": "h6YjbC5HKtoit79edssQV",
+            "name": "owned_games",
+            "x": -780.2,
+            "y": -169.8,
+            "locked": false,
+            "fields": [
+                {
+                    "id": "j10fg6RwrQ5SZKhjgwQ5t",
+                    "name": "id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": true,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": true,
+                    "comment": ""
+                },
+                {
+                    "id": "3cRflSWC5JH24ZmWrFvSZ",
+                    "name": "game_id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "aRy9os1jeXfRlihCbXg6S",
+                    "name": "library_id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": ""
+                },
+                {
+                    "id": "gE1PVlroHptGJlx3Gc21K",
+                    "name": "comment",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "NQyvEdhQwNxCXBSih19f1",
+                    "name": "completion_date",
+                    "type": "DATE",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": false,
+                    "increment": false,
+                    "comment": ""
+                }
+            ],
+            "comment": "",
+            "indices": [
+                {
+                    "id": "mTLONMYTyAojPa2TURNgZ",
+                    "name": "owned_games_library_id_game_id_unique",
+                    "unique": true,
+                    "fields": [
+                        "library_id",
+                        "game_id"
+                    ]
+                }
+            ],
+            "uniqueConstraints": [],
+            "color": "#175e7a",
+            "collapsed": false
+        },
+        {
+            "id": "j3uk1oUu8LYRnNxi_s-mk",
+            "name": "users",
+            "x": -70.8,
+            "y": -545.2,
+            "locked": false,
+            "fields": [
+                {
+                    "id": "kMtuVrFnrniTS90835655",
+                    "name": "id",
+                    "type": "BIGINT",
+                    "default": "",
+                    "check": "",
+                    "primary": true,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": true,
+                    "comment": ""
+                },
+                {
+                    "id": "oUDMwb64F1gMhxdWMTtJj",
+                    "name": "pseudo",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": true,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "a7sajygnZAxmxXbZ1YE2h",
+                    "name": "email",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": true,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                },
+                {
+                    "id": "WOeaEVOQFeFgoHENEHYh6",
+                    "name": "password",
+                    "type": "VARCHAR",
+                    "default": "",
+                    "check": "",
+                    "primary": false,
+                    "unique": false,
+                    "notNull": true,
+                    "increment": false,
+                    "comment": "",
+                    "size": 255
+                }
+            ],
+            "comment": "",
+            "indices": [],
+            "uniqueConstraints": [],
+            "color": "#7a1763",
+            "collapsed": false
+        }
+    ],
+    "relationships": [
+        {
+            "startTableId": "h3Z8D0qmsgGHz5A0_cOYD",
+            "startFieldId": "BeIlXa6BnMjxBPWok0mqR",
+            "endTableId": "j3uk1oUu8LYRnNxi_s-mk",
+            "endFieldId": "kMtuVrFnrniTS90835655",
+            "cardinality": "many_to_one",
+            "fields": [
+                {
+                    "startFieldId": "BeIlXa6BnMjxBPWok0mqR",
+                    "endFieldId": "kMtuVrFnrniTS90835655"
+                }
+            ],
+            "updateConstraint": "No action",
+            "deleteConstraint": "Restrict",
+            "name": "fk_borrowed_games_borrower_id_users",
+            "color": "#808080",
+            "id": "nMt01ZdK5HAAwmYUbrjoy"
+        },
+        {
+            "startTableId": "h3Z8D0qmsgGHz5A0_cOYD",
+            "startFieldId": "5mvv88k2Ks1ZRp11hXMMl",
+            "endTableId": "h6YjbC5HKtoit79edssQV",
+            "endFieldId": "j10fg6RwrQ5SZKhjgwQ5t",
+            "cardinality": "one_to_one",
+            "fields": [
+                {
+                    "startFieldId": "5mvv88k2Ks1ZRp11hXMMl",
+                    "endFieldId": "j10fg6RwrQ5SZKhjgwQ5t"
+                }
+            ],
+            "updateConstraint": "No action",
+            "deleteConstraint": "Restrict",
+            "name": "fk_borrowed_games_owned_game_id_owned_games",
+            "color": "#808080",
+            "id": "mGlhBhXRXAfdpJgJRfiZi"
+        },
+        {
+            "startTableId": "95tiWCpo_jFjillyAF8X1",
+            "startFieldId": "5JaKjMoqvXtAsHiHpHhjv",
+            "endTableId": "j3uk1oUu8LYRnNxi_s-mk",
+            "endFieldId": "kMtuVrFnrniTS90835655",
+            "cardinality": "many_to_one",
+            "fields": [
+                {
+                    "startFieldId": "5JaKjMoqvXtAsHiHpHhjv",
+                    "endFieldId": "kMtuVrFnrniTS90835655"
+                }
+            ],
+            "updateConstraint": "No action",
+            "deleteConstraint": "Cascade",
+            "name": "fk_libraries_user_id_users",
+            "color": "#808080",
+            "id": "Xxd0qXt8aKwdgI6u79DL9"
+        },
+        {
+            "startTableId": "h6YjbC5HKtoit79edssQV",
+            "startFieldId": "3cRflSWC5JH24ZmWrFvSZ",
+            "endTableId": "tZtuELd0B9Y8ayeULDLOO",
+            "endFieldId": "RyGWvML2FyU0iVNzcQOmW",
+            "cardinality": "many_to_one",
+            "fields": [
+                {
+                    "startFieldId": "3cRflSWC5JH24ZmWrFvSZ",
+                    "endFieldId": "RyGWvML2FyU0iVNzcQOmW"
+                }
+            ],
+            "updateConstraint": "No action",
+            "deleteConstraint": "Restrict",
+            "name": "fk_owned_games_game_id_games",
+            "color": "#808080",
+            "id": "H9Cd3E0U4Z0prhtBPIDJi"
+        },
+        {
+            "startTableId": "h6YjbC5HKtoit79edssQV",
+            "startFieldId": "aRy9os1jeXfRlihCbXg6S",
+            "endTableId": "95tiWCpo_jFjillyAF8X1",
+            "endFieldId": "gV9pcBD8OnYzXzZmTuYqk",
+            "cardinality": "many_to_one",
+            "fields": [
+                {
+                    "startFieldId": "aRy9os1jeXfRlihCbXg6S",
+                    "endFieldId": "gV9pcBD8OnYzXzZmTuYqk"
+                }
+            ],
+            "updateConstraint": "No action",
+            "deleteConstraint": "Restrict",
+            "name": "fk_owned_games_library_id_libraries",
+            "color": "#808080",
+            "id": "F6393D4gMKwqefSSapLNv"
+        }
+    ],
+    "notes": [],
+    "subjectAreas": [],
+    "views": [],
+    "database": "postgresql",
+    "types": [],
+    "enums": [],
+    "title": "GLP"
+}
