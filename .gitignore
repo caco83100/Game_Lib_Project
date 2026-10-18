@@ -1,1 +1,5 @@
 **/*.env
+
+# Config Claude Code locale (chemins perso)
+CLAUDE.local.md
+.claude/settings.local.json

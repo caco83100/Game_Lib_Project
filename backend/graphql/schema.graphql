@@ -18,6 +18,9 @@ type Query {
       pseudo: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10)
 
+    "Find a library by its id (null if it does not exist)."
+    library(id: ID!): Library
+
     "test pong"
     ping: String!
 }
@@ -35,14 +38,16 @@ type User {
 
 type Library {
     id: ID!
+    user_id: ID!
     title: String!
-    owned_games: [OwnedGame!]!
+    is_default: Boolean!
+    owned_games: [OwnedGame!]! @field(resolver: "App\\GraphQL\\Types\\Library\\OwnedGames")
 }
 
 type OwnedGame {
     id: ID!
     comment: String
-    game: Game!
+    game: Game! @field(resolver: "App\\GraphQL\\Types\\OwnedGame\\GameOfCopy")
 }
 
 type Game {
